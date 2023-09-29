@@ -1,9 +1,6 @@
 # inertialsense_imx5
-ROS2 Driver for Inertial Sense IMX5 IMUs. Functionality for GPS has not been added yet. Tested on RUG3-IMX5 IMU with ROS2 Humble. Code is heavily based on [Inertial Sense ROS1 Driver](https://github.com/inertialsense/inertial-sense-ros) with a help from [MagiicLab ROS2 Driver](https://gitlab.magiccvs.byu.edu/boatlanding/ros2-sensor-drivers/inertialsense_ros2/-/tree/ros2). Every effort is made to follow the parameter and topic names of the 'Inertial Sense ROS1 Driver. See [DID Descriptions](https://docs.inertialsense.com/user-manual/com-protocol/DID-descriptions/) for more information on published information. 
+ROS2 wrapper for Inertial Sense IMX5 IMUs. Functionality for GPS has not been added yet. Tested on RUG3-IMX5 IMU with ROS2 Humble. Code is heavily based on [Inertial Sense ROS1 Driver](https://github.com/inertialsense/inertial-sense-ros) with a help from [MagiicLab ROS2 Driver](https://gitlab.magiccvs.byu.edu/boatlanding/ros2-sensor-drivers/inertialsense_ros2/-/tree/ros2). Every effort is made to follow the parameter and topic names of the 'Inertial Sense ROS1 Driver. See [DID Descriptions](https://docs.inertialsense.com/user-manual/com-protocol/DID-descriptions/) for more information on published information. 
 
-# Inertial Sense ROS
-
-A ROS wrapper for the Inertial Sense IMX product line.
 
 ## Installation
 
@@ -77,3 +74,14 @@ Topics are enabled and disabled using parameters.  By default, only the `ins` to
    - Flag to stream baro or not (DID_BAROMETER)
 * `stream_mag` (bool, default: false)
    - Flag to stream magnetometer or not (DID_MAGNETOMETER)
+
+# Troubleshooting
+* Be sure to add yourself to dialout group
+``` bash
+sudo usermod -a -G dialout $USER`
+```
+
+* If sensor doesn't connect, try 'enabling' the serial port
+``` bash
+sudo chmod a+rw /dev/ttyACM0
+```
