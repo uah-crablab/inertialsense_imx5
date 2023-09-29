@@ -35,8 +35,8 @@ Topics are enabled and disabled using parameters.  By default, only the `ins` to
     - magnetic field measurement from DID_MAG, DID_IMU_MAG, or DID_PIMU_MAG
 - `baro` (sensor_msgs/FluidPressure)
     - barometer measurements in kPa from DID_BAROMETER
-- `preint_imu` (inertial_sense_ros/DThetaVel)
-    - preintegrated coning and sculling integrals of IMU measurements from DID_PIMU or DID_PIMU_MAG
+- `preint_imu` (inertial_sense_ros/PreIntImu)
+    - preintegrated coning integral of IMU measurements from DID_PIMU or DID_PIMU_MAG
 
 ## Parameters
 
