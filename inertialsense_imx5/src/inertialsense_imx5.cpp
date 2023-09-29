@@ -39,8 +39,8 @@ void InertialSenseROS::load_params_srv()
     log_enabled_ = declare_parameter<bool>("enable_log",false);
 
     // Enable Sensors
-    preint_IMU_MAG_.enabled = declare_parameter<bool>("stream_preint_IMU_mag_",false); // DID_IMU3_RAW
-    IMU_MAG_.enabled = declare_parameter<bool>("stream_IMU_mag",true); // DID_IMU3_RAW
+    preint_IMU_MAG_.enabled = declare_parameter<bool>("stream_preint_IMU_mag_",false); // DID_PIMU_MAG
+    IMU_MAG_.enabled = declare_parameter<bool>("stream_IMU_mag",true); // DID_IMU_MAG
     IMU_.enabled = declare_parameter<bool>("stream_IMU",false); // DID_IMU
     preint_IMU_.enabled = declare_parameter<bool>("stream_preint_IMU",false); // DID_PIMU
     IMU_RAW_.enabled = declare_parameter<bool>("stream_IMU_raw",false); // DID_IMU_RAW
