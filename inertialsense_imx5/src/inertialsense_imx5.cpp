@@ -1,22 +1,5 @@
 #include "inertialsense_imx5.h"
 
-/* 
-ToDo:
--Add to CMAKE and Package XML Sensor message dependices
--Add to README.md 
-
-Add The Following:  
--DID_INS_2
--DID_IMU_MAG
--ROS2 Services
--baud rate config
--dump sensor config
--dump nvm_flash_cfg_t
--roslaunch file 
--debug ros_time_from_start_time(msg->time);
--strobeInStreaming_
--flashConfigStreaming_
-*/
 
 InertialSenseROS::InertialSenseROS(bool configFlashParameters) : Node("inertial_sense")
 {
@@ -135,17 +118,6 @@ void InertialSenseROS::load_params_srv()
         imu_dt_ms_ = 1; // set to 1 ms to get the 'best' IMU and PIMU data possible. 
         RCLCPP_WARN(get_logger(), "Both filterd (IMU/PIMU) and RAW (IMU_RAW/IMU3_RAW) data streams are enabled... Disabling RAW Data Streams"); 
     }
-
-    //  HC WIP (may or may not need)
-    // nh_private_.getParam("stream_covariance_data", covariance_enabled_);
-    // nh_private_.getParam("imu_period_multiple", IMU_.period_multiple);
-    // nh_private_.getParam("mag_period_multiple", mag_.period_multiple);
-    // nh_private_.getParam("baro_period_multiple", baro_.period_multiple);
-    // nh_private_.getParam("preint_imu_period_multiple", preint_IMU_.period_multiple);
-    // nh_private_.getParam("stream_diagnostics", diagnostics_.enabled);
-    // nh_private_.getParam("diagnostics_period_multiple", diagnostics_.period_multiple);
-    // ioConfigBits_ = declare_parameter<int>("ioConfig",0x0244a060); // EVB2: GPS1 Ser1 F9P, GPS2 disabled F9P, PPS G8
-    // insDynModel_ = declare_parameter<int>("dynamic_model",INS_DYN_MODEL_AIRBORNE_4G);
 }
 
 void InertialSenseROS::configure_data_streams() 

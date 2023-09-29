@@ -2,10 +2,10 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>inertialsense_imx5</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="hc0060@uah.edu">howie</maintainer>
-  <license>TODO: License declaration</license>
+  <version>0.0.1</version>
+  <description>This package provides a ROS interface to the InertialSense GPS-INS sensor</description>
+  <maintainer email="hc0060@uah.edu">Howard Chen</maintainer>
+  <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   <depend>rclcpp</depend>
